@@ -1,0 +1,18 @@
+<button mat-button [matMenuTriggerFor]="beforeMenu" class="flex">
+    @{{currentUser.email | email}}
+    <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+</button>
+<mat-menu #beforeMenu="matMenu" xPosition="before" class="mt-4 w-36">
+    <button mat-menu-item class="flex">
+    <a routerLink="/account/info" class="flex justify-start items-center text-blue-400 hover:bg-gray-100">
+        <i class="pi pi-user mr-4"></i>
+        <span>Profile</span>
+    </a>
+    </button>
+    <button mat-menu-item>
+    <p (click) = "logout()" class="flex justify-start items-center text-blue-400 hover:bg-gray-100">
+        <i class="pi pi-power-off mr-4"></i>
+        <span>Sign out</span>
+    </p>
+    </button>
+</mat-menu>

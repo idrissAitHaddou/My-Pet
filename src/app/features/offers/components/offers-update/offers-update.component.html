@@ -1,0 +1,53 @@
+
+<h1>Update offer</h1>
+<form class="w-full">
+    <div class="w-full flex justify-start items-center gap-6 mb-6">
+        <div class="w-full">
+            <label for="name" class="block mb-2 text-sm font-medium">Title</label>
+            <input type="text" name="title" id="name" placeholder="document name" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
+        </div>
+        <div class="w-full">
+            <label for="name" class="block mb-2 text-sm font-medium">Campany</label>
+            <input type="text" name="campany" id="name" placeholder="document name" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
+        </div>
+    </div>
+    <div class="w-full flex justify-start items-center gap-6 mb-6">
+        <div class="flex items-center justify-center w-64 h-28 pl-10">
+            <label for="dropzone-file" class="flex flex-col items-center justify-center w-full border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+                <!-- <div class="flex items-center justify-center mt-1 px-4">
+                    <svg aria-hidden="true" class="w-10 mr-1 mb-1 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                    <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                </div> -->
+                <input multiple accept="image/*" name="file" id="file" type="file" class="" />
+            </label>
+        </div> 
+    </div>
+        <!-- start write description -->
+    <div>
+        <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50">
+            <div class="flex items-center justify-between px-3 py-2 border-b">
+                <div class="flex flex-wrap items-center divide-gray-200 sm:divide-x">
+                    <div class="flex items-center space-x-1 sm:pr-4">
+                        Description
+                    </div>
+                </div>
+                <button type="button" data-tooltip-target="tooltip-fullscreen" class="p-2 text-gray-500 rounded cursor-pointer sm:ml-auto hover:text-gray-900 hover:bg-gray-100">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 11-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15 13.586V12a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                    <span class="sr-only">Full screen</span>
+                </button>
+                <div id="tooltip-fullscreen" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip">
+                    Show full screen
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+            </div>
+            <div class="px-4 py-2 bg-white rounded-b-lg">
+                <label for="descritpion" class="sr-only">Publish post</label>
+                <textarea name="descritpion" id="descritpion" rows="3" class="block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="Write an article..." required></textarea>
+            </div>
+        </div>
+    </div>
+    <!-- end write description -->
+    <div class="flex justify-end items-center">
+        <button type="submit" class="bg-blue-500 text-white py-1 px-4 rounded-lg">Add offer</button>
+    </div>
+</form>

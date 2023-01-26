@@ -1,0 +1,20 @@
+
+<div class="container mx-auto">
+    <app-search-offers (serachValue) = "searchJobs($event)"></app-search-offers>
+    <div class="w-3/4 mx-auto flex justify-between mt-8">
+        <div>
+            <ng-container *ngFor = "let job of jobs">
+                <app-offers-card 
+                    [job] = "job" 
+                    (someEvent)="getJobDetails($event)"
+                ></app-offers-card>
+            </ng-container>
+        </div>
+        <div class="bg-white border rounded-lg" style="height: 450px;">
+            <app-offers-details [jobDetails] = "jobDetails"></app-offers-details>
+            <ng-container *ngIf="jobDetails.title">
+                <app-comments-create [jobDetails] = "jobDetails" (incrementComments)="incrementCountComments($event)"></app-comments-create>
+            </ng-container>
+        </div>
+    </div>
+</div>

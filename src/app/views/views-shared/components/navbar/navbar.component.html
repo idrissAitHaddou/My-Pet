@@ -1,0 +1,53 @@
+
+<nav class="relative bg-blue-400 p-3">
+    <div class="container flex flex-wrap items-center justify-between mx-auto">
+      <a routerLink="/" class="flex items-center cursor-pointer">
+          <span class="text-white font-bold text-xl">MyPet</span>  
+      </a>
+      <div class="md:w-auto" id="navbar-solid-bg">
+        <ul class="flex flex-col mt-4 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
+          <li *ngIf="_authenticated" class="flex items-center text-white" appAuthorizeRoles>
+            <a id="login-link" routerLink ="/offer/create" class="cursor-pointer text-white font-medium">
+              Create Post
+            </a>
+          </li>
+          <li *ngIf="!_authenticated" class="flex items-center text-white">
+            <a id="login-link" routerLink ="/register/sign-up" class="cursor-pointer text-white font-medium">
+              Register
+            </a>
+          </li>
+          <li *ngIf="!_authenticated" class="flex items-center text-white">
+            <a id="login-link" routerLink ="/register/sign-in" class="cursor-pointer text-white font-medium">
+              Login
+            </a>
+          </li>
+          <li  *ngIf="_authenticated" class="flex items-center text-white">
+            <a routerLink ="/account/info" class="cursor-pointer">
+              <img class="mr-2 w-10 h-10 rounded-full border-1 border-white" [src]="urlHostingImages+currentUser.image">
+            </a>
+            <div class="text-white focus:ring-0 focus:outline-none font-medium rounded-lg text-sm py-2.5 text-center inline-flex items-center" type="button">
+              <!-- <button mat-button [matMenuTriggerFor]="beforeMenu" class="flex">
+                @{{currentUser.email | email}}
+                  <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before" class="mt-4 w-36">
+                  <button mat-menu-item class="flex">
+                    <a routerLink="/account/info" class="flex justify-start items-center text-blue-400 hover:bg-gray-100">
+                      <i class="pi pi-user mr-4"></i>
+                      <span>Profile</span>
+                    </a>
+                  </button>
+                  <button mat-menu-item>
+                    <p (click) = "logout()" class="flex justify-start items-center text-blue-400 hover:bg-gray-100">
+                      <i class="pi pi-power-off mr-4"></i>
+                      <span>Sign out</span>
+                    </p>
+                  </button>
+                </mat-menu> -->
+                <app-dropdown-links></app-dropdown-links>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

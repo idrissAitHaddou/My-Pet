@@ -1,0 +1,18 @@
+<div class="relative bg-white border p-2.5 rounded-lg flex flex-col items-start justify-start w-96 mb-2">
+    <span *ngIf="checkIsCommted(job.comments)" class="absolute top-2 right-2 text-green-600">
+        <i class="pi pi-check"></i>
+    </span>
+    <div class="flex items-center">
+        <img [src]="urlHostingImages+job.user.image" class="h-6 w-6 border rounded-full mr-4" alt="logo" />
+        <div class="flex flex-col items-start justify-center">
+            <span class="text-sm font-normal">{{job.title}}</span>
+            <span class="text-xs mt-1 font-medium">{{job.campany}}</span>
+        </div>
+    </div>
+    <p class="text-sm mt-2">{{job.description | description}}...</p>
+    <div class="w-full px-2 flex justify-between items-center mt-2">
+        <span class="text-xs text-green-500 font-bold"> {{job.created_at}} </span> 
+        <span class="pi pi-comment text-green-600"> {{job.comments.length}} </span> 
+        <button (click)="someEvent.emit(job)" class="text-xs bg-blue-500 text-white py-1 px-2 rounded-lg hover:bg-blue-400">Show more</button> 
+    </div>
+</div>
